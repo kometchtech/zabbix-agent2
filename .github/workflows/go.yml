@@ -29,6 +29,7 @@ jobs:
 
     - name: Build
       run: |
+        cd /root/zabbix
         sudo ./configure --enable-agent2 --enable-static --enable-ipv6
         sudo make -j$(nproc)
       env:
