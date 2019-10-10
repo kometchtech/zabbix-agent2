@@ -29,8 +29,8 @@ jobs:
 
     - name: Build
       run: |
-        sudo ./configure --enable-agent2 --enable-static --enable-ipv6
-        sudo make -j$(nproc)
+        ./configure --enable-agent2 --enable-static --enable-ipv6
+        make -j$(nproc)
       working-directory: /root/zabbix
       env:
         GOARCH: arm64
