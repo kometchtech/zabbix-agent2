@@ -18,17 +18,17 @@ jobs:
 
     - name: Get dependencies
       run: |
-        apt update 
-        apt install -y build-essential libpcre3-dev zlib1g-dev
+        sudo apt update 
+        sudo apt install -y build-essential libpcre3-dev zlib1g-dev
         
     - name: download and extract source file
       run: |
-        wget https://sourceforge.net/projects/zabbix/files/ZABBIX%20Latest%20Stable/4.4.0/zabbix-4.4.0.tar.gz
-        tar xf zabbix-4.4.0.tar.gz --strip-components 1 -C /root/zabbix
+        sudo wget https://sourceforge.net/projects/zabbix/files/ZABBIX%20Latest%20Stable/4.4.0/zabbix-4.4.0.tar.gz
+        sudo tar xf zabbix-4.4.0.tar.gz --strip-components 1 -C /root/zabbix
 
     - name: Build
       run: |
-        ./configure --enable-agent2 --enable-static --enable-ipv6
-        make -j$(nproc)
+        sudo ./configure --enable-agent2 --enable-static --enable-ipv6
+        sudo make -j$(nproc)
       env:
         GOARCH: arm64
