@@ -18,8 +18,8 @@ jobs:
 
     - name: Get dependencies
       run: |
-        apt update --qq
-        apt install build-essential libpcre3-dev zlib1g-dev
+        apt-get update --qq
+        DEBIAN_FRONTEND=noninteractive apt-get install -y -qq build-essential libpcre3-dev zlib1g-dev
         
     - name: download and extract source file
       run: |
