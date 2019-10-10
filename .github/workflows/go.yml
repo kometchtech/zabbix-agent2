@@ -23,6 +23,7 @@ jobs:
         
     - name: download and extract source file
       run: |
+        sudo mkdir -p /root/zabbix
         sudo wget https://sourceforge.net/projects/zabbix/files/ZABBIX%20Latest%20Stable/4.4.0/zabbix-4.4.0.tar.gz
         sudo tar xf zabbix-4.4.0.tar.gz --strip-components 1 -C /root/zabbix
 
