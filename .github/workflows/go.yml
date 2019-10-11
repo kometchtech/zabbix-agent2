@@ -19,7 +19,7 @@ jobs:
     - name: Get dependencies
       run: |
         sudo apt update 
-        sudo apt install -y build-essential libpcre3-dev zlib1g-dev
+        sudo apt install -y build-essential libpcre3-dev zlib1g-dev git
         
     - name: download and extract source file
       run: |
@@ -28,8 +28,8 @@ jobs:
 
     - name: Build
       run: |
-        ./configure --enable-agent2 --enable-static --enable-ipv6
-        make -j$(nproc)
+        sudo ./configure --enable-agent2 --enable-static --enable-ipv6
+        sudo make -j$(nproc)
       working-directory: /root/zabbix
       env:
         GOARCH: arm64
